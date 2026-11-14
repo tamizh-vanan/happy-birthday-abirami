@@ -138,7 +138,7 @@ export function ExperienceProvider({ children }: { children: ReactNode }) {
           life: 0,
           maxLife: 320 + Math.random() * 120,
           size: 7 + Math.random() * 7,
-          color: confettiColors[i % confettiColors.length],
+          color: confettiColors[i % confettiColors.length] ?? "gold",
           kind: "confetti",
           rot: Math.random() * Math.PI,
           vr: (Math.random() - 0.5) * 0.2,
@@ -159,7 +159,7 @@ export function ExperienceProvider({ children }: { children: ReactNode }) {
                 vy: Math.sin(angle) * speed,
                 life: 0, maxLife: 70 + Math.random() * 40,
                 size: 2.2 + Math.random() * 1.6,
-                color: goldColors[i % goldColors.length],
+                color: goldColors[i % goldColors.length] ?? "gold",
                 kind: "spark", rot: 0, vr: 0,
               });
             }

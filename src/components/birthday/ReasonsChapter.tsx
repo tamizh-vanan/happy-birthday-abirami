@@ -11,7 +11,7 @@ import { scrollToChapter } from "./Chrome";
 const ICONS = [Flame, Briefcase, Smile, BookOpen, Headphones, ShieldCheck, HandHeart, Mountain, Sparkles, Heart];
 
 function ReasonCard({ index, text, flipped, onToggle }: { index: number; text: string; flipped: boolean; onToggle: () => void }) {
-  const Icon = ICONS[index];
+  const Icon = ICONS[index] ?? Heart;
   return (
     <motion.li
       initial={{ opacity: 0, y: 24 }}
@@ -85,7 +85,7 @@ export function ReasonsChapter() {
               key={r}
               index={i}
               text={r}
-              flipped={flipped[i]}
+              flipped={flipped[i] ?? false}
               onToggle={() => setFlipped((f) => f.map((v, j) => (j === i ? !v : v)))}
             />
           ))}

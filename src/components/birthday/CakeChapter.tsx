@@ -49,7 +49,7 @@ function Cake({ lit }: { lit: boolean }) {
   const reduce = useReducedMotion();
   return (
     <motion.div
-      animate={reduce ? undefined : { y: [0, -6, 0] }}
+      animate={reduce ? {} : { y: [0, -6, 0] }}
       transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
       className="relative mx-auto flex w-[min(100%,20rem)] flex-col items-center sm:w-[22rem]"
       role="img"

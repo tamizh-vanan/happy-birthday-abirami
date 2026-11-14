@@ -56,7 +56,7 @@ export function MeetingChapter() {
 
           <div className="flex items-center justify-between border-b border-terminal-line bg-meeting/20 px-5 py-3">
             <span className="flex items-center gap-2 font-mono text-xs text-meeting-foreground">
-              <motion.span animate={reduce ? undefined : { rotate: [0, 15, -15, 10, 0] }} transition={{ duration: 0.7, repeat: Infinity, repeatDelay: 1 }}>
+              <motion.span animate={reduce ? {} : { rotate: [0, 15, -15, 10, 0] }} transition={{ duration: 0.7, repeat: Infinity, repeatDelay: 1 }}>
                 <BellRing className="h-4 w-4" aria-hidden="true" />
               </motion.span>
               Meeting invitation

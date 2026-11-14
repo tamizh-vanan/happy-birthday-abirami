@@ -197,7 +197,7 @@ export function DashboardChapter() {
             >
               <div className="flex items-start gap-3">
                 <motion.span
-                  animate={reduce ? undefined : { rotate: [0, -12, 12, -8, 0] }}
+                  animate={reduce ? {} : { rotate: [0, -12, 12, -8, 0] }}
                   transition={{ duration: 0.8, repeat: Infinity, repeatDelay: 2 }}
                   className="mt-0.5 flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-code-amber text-terminal"
                 >
