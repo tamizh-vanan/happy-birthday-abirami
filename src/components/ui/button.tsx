@@ -16,12 +16,26 @@ const buttonVariants = cva(
         secondary: "bg-secondary text-secondary-foreground shadow-sm hover:bg-secondary/80",
         ghost: "hover:bg-accent hover:text-accent-foreground",
         link: "text-primary underline-offset-4 hover:underline",
+        terminal:
+          "rounded-lg border border-code-green/60 bg-code-green/10 font-mono text-code-green shadow-glow-green hover:bg-code-green hover:text-terminal",
+        terminalGhost:
+          "rounded-lg border border-terminal-line bg-terminal-raised font-mono text-terminal-foreground hover:border-terminal-muted",
+        romance:
+          "rounded-full bg-rose-gradient font-semibold text-primary-foreground shadow-glow-rose hover:brightness-105 active:scale-[0.98] transition-all",
+        gold: "rounded-full bg-gold-gradient font-semibold text-ink shadow-glow-gold hover:brightness-105 active:scale-[0.98] transition-all",
+        meeting:
+          "rounded-lg bg-meeting font-semibold text-meeting-foreground hover:brightness-110 active:scale-[0.98] transition-all",
+        softOutline:
+          "rounded-full border border-rose/40 bg-card/70 text-ink backdrop-blur hover:bg-card",
+        night:
+          "rounded-full border border-starlight/40 bg-night-foreground/10 text-night-foreground backdrop-blur hover:bg-night-foreground/20",
       },
       size: {
         default: "h-9 px-4 py-2",
         sm: "h-8 rounded-md px-3 text-xs",
         lg: "h-10 rounded-md px-8",
         icon: "h-9 w-9",
+        xl: "h-12 px-7 text-base [&_svg]:size-5",
       },
     },
     defaultVariants: {
