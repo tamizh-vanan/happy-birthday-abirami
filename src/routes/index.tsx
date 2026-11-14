@@ -1,23 +1,50 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { MotionConfig } from "framer-motion";
+import { ExperienceProvider } from "@/components/birthday/ExperienceProvider";
+import { ProgressChrome, SoundToggle } from "@/components/birthday/Chrome";
+import { BootChapter } from "@/components/birthday/BootChapter";
+import { DashboardChapter } from "@/components/birthday/DashboardChapter";
+import { MeetingChapter } from "@/components/birthday/MeetingChapter";
+import { CakeChapter } from "@/components/birthday/CakeChapter";
+import { ReasonsChapter } from "@/components/birthday/ReasonsChapter";
+import { LetterChapter } from "@/components/birthday/LetterChapter";
+import { FinaleChapter } from "@/components/birthday/FinaleChapter";
 
-// The home route ships no og:image, so serve-time hosting can inject the
-// project's social preview (explicit og:image or latest screenshot).
+const TITLE = "Happy Birthday Abirami | A Surprise by Tamizh";
+const DESCRIPTION = "A little birthday surprise, made with all my heart. Happy Birthday Abi!";
+
 export const Route = createFileRoute("/")({
+  head: () => ({
+    meta: [
+      { title: TITLE },
+      { name: "description", content: DESCRIPTION },
+      { property: "og:title", content: TITLE },
+      { property: "og:description", content: DESCRIPTION },
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary_large_image" },
+      { name: "twitter:title", content: TITLE },
+      { name: "twitter:description", content: DESCRIPTION },
+    ],
+  }),
   component: Index,
 });
 
-// IMPORTANT: Replace this placeholder. See ./README.md for routing conventions.
 function Index() {
   return (
-    <div
-      className="flex min-h-screen items-center justify-center"
-      style={{ backgroundColor: "#fcfbf8" }}
-    >
-      <img
-        data-lovable-blank-page-placeholder="REMOVE_THIS"
-        src="https://cdn.gpteng.co/blank-app-v1.svg"
-        alt="Your app will live here!"
-      />
-    </div>
+    <MotionConfig reducedMotion="user">
+      <ExperienceProvider>
+        <ProgressChrome />
+        <SoundToggle />
+        <main>
+          <BootChapter />
+          <DashboardChapter />
+          <MeetingChapter />
+          <CakeChapter />
+          <ReasonsChapter />
+          <LetterChapter />
+          <FinaleChapter />
+        </main>
+      </ExperienceProvider>
+    </MotionConfig>
   );
 }
