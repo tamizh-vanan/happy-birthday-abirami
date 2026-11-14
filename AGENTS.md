@@ -28,3 +28,9 @@ use the editor.
   own key and store it in Secrets.
 - **Secrets.** Lovable manages them. Do not put secret values in the repo.
 <!-- LOVABLE:END -->
+
+## Project rules
+
+- The birthday experience is one page (`/`) composed of one component per chapter in `src/components/birthday/`; all copy lives in `src/lib/content.ts` so text edits never touch layout.
+- Confetti/fireworks and music are owned by `ExperienceProvider` (one canvas, one Web Audio instance); chapters call `useExperience()` instead of creating their own, so effects never stack.
+- Music is synthesised with Web Audio (`src/lib/music.ts`) and starts only from the sound toggle — no audio files, no autoplay.
