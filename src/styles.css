@@ -382,3 +382,26 @@
     color-mix(in oklab, var(--rose) 18%, transparent) calc(2.15rem + 1px)
   );
 }
+
+/* Candle wax stripes */
+@utility candle-stripes {
+  background: repeating-linear-gradient(
+    135deg,
+    var(--cream) 0 6px,
+    var(--rose) 6px 10px
+  );
+}
+
+/* Cake textures */
+@utility sprinkles {
+  background-image:
+    radial-gradient(circle, var(--gold) 1.5px, transparent 2px),
+    radial-gradient(circle, var(--cream) 1.5px, transparent 2px);
+  background-size: 22px 18px, 30px 24px;
+  background-position: 0 0, 11px 9px;
+}
+@utility piping {
+  background-image: radial-gradient(circle at 50% 0%, var(--cream) 7px, transparent 7.5px);
+  background-size: 18px 14px;
+  background-repeat: repeat-x;
+}
