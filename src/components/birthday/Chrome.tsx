@@ -103,7 +103,7 @@ export function SoundToggle() {
       aria-pressed={soundOn}
       aria-label={soundOn ? "Turn background music off" : "Turn background music on"}
       className={cn(
-        "fixed bottom-4 right-4 z-50 flex h-12 items-center gap-2 rounded-full px-4 font-mono text-xs backdrop-blur-md transition-all",
+        "fixed bottom-4 right-4 z-50 flex h-11 w-11 items-center justify-center gap-2 rounded-full font-mono sm:h-12 sm:w-auto sm:px-4 text-xs backdrop-blur-md transition-all",
         soundOn
           ? "bg-gold-gradient text-ink shadow-glow-gold"
           : "bg-terminal/75 text-terminal-foreground ring-1 ring-terminal-line hover:ring-gold",

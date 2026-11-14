@@ -161,14 +161,14 @@ export function DashboardChapter() {
               <p>&nbsp;</p>
               {TEST_SCENARIOS.slice(0, completed).map((t, i) => (
                 <div key={`${run}-${t.name}`}>
-                  <p className="whitespace-nowrap">
+                  <p>
                     <span className={t.passed ? "text-code-green" : "text-code-red"}>{t.passed ? "  ✓" : "  ✘"}</span>
-                    <span className="text-terminal-muted"> {i + 1} [abi] › birthday.spec.ts:{(i + 1) * 7}:3 › </span>
+                    <span className="text-terminal-muted"> {i + 1} <span className="hidden sm:inline">[abi] › birthday.spec.ts:{(i + 1) * 7}:3 </span>› </span>
                     {slug(t.name)} <span className="text-terminal-muted">({t.ms >= 1000 ? `${(t.ms / 1000).toFixed(1)}s` : `${t.ms}ms`})</span>
                   </p>
                   {!t.passed && (
                     <div className="ml-6 text-code-red/90">
-                      <p>Error: expect(abi.breaksTaken).toBeGreaterThan(0)</p>
+                      <p className="break-all">Error: expect(abi.breaksTaken).toBeGreaterThan(0)</p>
                       <p className="text-terminal-muted">  Expected: &gt; 0</p>
                       <p className="text-terminal-muted">  Received: 0 <span className="text-code-amber">// since forever</span></p>
                     </div>

@@ -115,7 +115,7 @@ export function MeetingChapter() {
             </ol>
 
             <div className="mt-7 flex flex-col gap-3 sm:flex-row">
-              <Button variant="meeting" size="xl" className="flex-1" onClick={join} disabled={joined}>
+              <Button variant="meeting" size="xl" className="sm:flex-1" onClick={join} disabled={joined}>
                 {joined ? <Check /> : <PartyPopper />}
                 {joined ? "Joining…" : "Join Birthday Celebration"}
               </Button>
