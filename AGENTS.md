@@ -34,3 +34,5 @@ use the editor.
 - The birthday experience is one page (`/`) composed of one component per chapter in `src/components/birthday/`; all copy lives in `src/lib/content.ts` so text edits never touch layout.
 - Confetti/fireworks and music are owned by `ExperienceProvider` (one canvas, one Web Audio instance); chapters call `useExperience()` instead of creating their own, so effects never stack.
 - Music is synthesised with Web Audio (`src/lib/music.ts`) and starts only from the sound toggle — no audio files, no autoplay.
+
+- The page body lives in `BirthdayExperience`, shared by the Lovable route and a separate static GitHub Pages build (`vite.pages.config.ts`, `pages/`, `.github/workflows/deploy-pages.yml`); keep it free of router/server code so both builds work.
